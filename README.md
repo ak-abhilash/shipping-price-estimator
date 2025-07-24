@@ -46,7 +46,33 @@ Additional columns like **product dimensions**, **supplier city**, and **distanc
 
 ---
 
+## Setup Instructions
+
+1. Sign up at [Databricks Community Edition](https://community.cloud.databricks.com/)  
+2. Create a new notebook and upload the `Amazon_Sale_Report.csv`  
+3. Attach the notebook to a cluster (you can use default config)  
+4. Ensure the CSV and notebook are in the same workspace folder
+
+---
+
 ## How to Run
 
-> Works on Databricks CE (Community Edition)
+1. Open the uploaded notebook in Databricks  
+2. Run each cell sequentially  
+3. Output will be written to:  
+   `/FileStore/output/shipping_estimation_results`  
+4. Use `%fs ls /FileStore/output/` to inspect or download the output
 
+---
+
+## Output
+
+The final output is written as a Parquet file and contains enriched shipping data per order line, including estimated cost and free shipping status.
+
+---
+
+## Notes
+
+- Distances and weights are randomly generated using mock logic  
+- You can replace city distances with real data or use external APIs  
+- Extendable to support other business rules and pricing strategies  
